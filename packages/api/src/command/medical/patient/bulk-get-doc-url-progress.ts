@@ -36,7 +36,7 @@ export async function appendBulkGetDocUrlProgress({
     });
 
     const bulkGetDocumentsUrlProgress: BulkGetDocumentsUrlProgress = existingPatient.data
-      ?.bulkGetDocumentsUrlProgress || { status: "processing" };
+      ?.bulkGetDocumentsUrlProgress ?? { status: "processing" };
 
     if (status) {
       bulkGetDocumentsUrlProgress.status = status;

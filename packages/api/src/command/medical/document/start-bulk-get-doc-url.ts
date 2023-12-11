@@ -28,7 +28,6 @@ export const startBulkGetDocumentUrls = async (
   patientId: string
 ): Promise<BulkGetDocumentsUrlProgress> => {
   const { log } = Util.out(`startBulkGetDocumentUrls - M patient ${patientId}`);
-  if (!bulkSigningLambdaName) throw new Error("Bulk Signing Lambda Name is undefined");
   const patient = await getPatientOrFail({ id: patientId, cxId });
 
   const bulkGetDocUrlProgress = patient.data.bulkGetDocumentsUrlProgress;
